@@ -1,5 +1,5 @@
 {% set name = "poethepoet" %}
-{% set version = "0.10.0" %}
+{% set version = "0.33.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/poethepoet-{{ version }}.tar.gz
-  sha256: 70b97cb194b978dc464c70793e85e6f746cddf82b84a38bfb135946ad71ae19c
+  sha256: 8775e09b64f773278b5483659ff238a708723491efadeedd1c2cbf773558cb4c
 
 build:
   noarch: python
@@ -26,6 +26,8 @@ requirements:
     - python >={{ python_min }}
     - pastel >=0.2.0,<0.3.0
     - tomlkit >=0.6.0,<1.0.0
+    - pyyaml
+    - tomli
 
 test:
   imports:
