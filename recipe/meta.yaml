@@ -1,5 +1,5 @@
 {% set name = "poethepoet" %}
-{% set version = "0.33.1" %}
+{% set version = "0.36.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/poethepoet-{{ version }}.tar.gz
-  sha256: 8775e09b64f773278b5483659ff238a708723491efadeedd1c2cbf773558cb4c
+  sha256: 2217b49cb4e4c64af0b42ff8c4814b17f02e107d38bc461542517348ede25663
 
 build:
   noarch: python
