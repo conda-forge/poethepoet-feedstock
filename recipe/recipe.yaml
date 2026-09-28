@@ -1,0 +1,54 @@
+schema_version: 1
+
+context:
+  version: 0.48.0
+
+package:
+  name: poethepoet
+  version: ${{ version }}
+
+source:
+- url: https://files.pythonhosted.org/packages/source/p/poethepoet/poethepoet-${{ version }}.tar.gz
+  sha256: a06f49d244fadfc2e2e7faa78b54e64a9694727e4ce1d50e08f23cea3ded74f1
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - poe = poethepoet:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - poetry >=0.12
+    - poetry-core
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - pastel >=0.2.0,<0.3.0
+    - tomlkit >=0.6.0,<1.0.0
+    - pyyaml
+    - tomli
+
+tests:
+  - python:
+      imports:
+        - poethepoet
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - '*'
+    script:
+      - poe --help
+
+about:
+  summary: A task runner that works well with poetry.
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/nat-n/poethepoet
+
+extra:
+  recipe-maintainers:
+    - Dhananjhay
