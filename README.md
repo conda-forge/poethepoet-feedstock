@@ -189,4 +189,5 @@ Feedstock Maintainers
 =====================
 
 * [@Dhananjhay](https://github.com/Dhananjhay/)
+* [@jsmolic](https://github.com/jsmolic/)
 
